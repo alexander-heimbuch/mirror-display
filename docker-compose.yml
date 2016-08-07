@@ -1,0 +1,11 @@
+version: '2'
+services:
+  display:
+    build: .
+    environment:
+      - SERVER_PORT=8002
+      - SOCKET_PORT=8003
+      - TZ=Europe/Berlin
+    ports:
+      - "8002:8002"
+      - "8003:8003"

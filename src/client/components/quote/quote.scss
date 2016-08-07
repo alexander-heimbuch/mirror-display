@@ -1,0 +1,28 @@
+// QUOTE COMPONENT
+
+@import 'variables';
+@import 'mixins';
+
+.quote-component {
+  @include center();
+  text-align: center;
+
+  flex-direction: column;
+
+  padding: 0 $padding * 2;
+  margin-bottom: $margin;
+
+  .quote-word {
+    font-size: $font-size * 2.5;
+    font-weight: 300;
+    margin-bottom: $margin;
+  }
+
+  .quote-meaning {
+    font-size: $font-size * 1.5;
+    font-weight: 300;
+    font-style: italic;
+    height: 80px;
+    padding: 0 $padding;
+  }
+}

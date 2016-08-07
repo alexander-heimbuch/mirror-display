@@ -1,0 +1,65 @@
+// TRAVEL COMPONENT
+
+@import 'variables';
+@import 'mixins';
+
+.travel-component {
+  @include center();
+  flex-direction: column;
+
+  .travel-headline {
+    text-align: center;
+    font-size: $font-size * 2.5;
+    font-weight: 300;
+    margin-bottom: $margin;
+  }
+
+  .travel-entry {
+    height: 100px;
+    width: 100%;
+    @include center();
+    margin-bottom: $margin;
+  }
+
+  .travel-icon {
+    display: block;
+
+    height: 100%;
+    width: 35%;
+    @include center();
+
+    svg {
+      fill: $primary;
+      width: 120px;
+      height: auto;
+    }
+  }
+
+  .travel-times {
+    height: 100%;
+    width: 65%;
+    overflow: hidden;
+
+    @include center();
+    align-items: baseline;
+    flex-direction: column;
+
+    font-size: $font-size * 1.5;
+    font-weight: 300;
+
+    .travel-time {
+        white-space: nowrap;
+        padding: ($padding / 4) 0;
+    }
+
+    .travel-time-start {
+      display: inline-block;
+      width: 100px;
+    }
+
+    .travel-time-duration {
+      display: inline-block;
+      width: 60px;
+    }
+  }
+}

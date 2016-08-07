@@ -1,0 +1,23 @@
+// DATE Component
+
+@import 'variables';
+@import 'mixins';
+
+.date-component {
+  @include center();
+
+  flex-direction: column;
+  padding: 0 ($padding * 2);
+  margin-bottom: $margin;
+
+  .current-time {
+    font-size: $font-size * 4;
+    line-height: $line-height * 0.5;
+    font-weight: 300;
+  }
+
+  .current-date {
+    font-size: $font-size * 2;
+    font-weight: 300;
+  }
+}

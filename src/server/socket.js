@@ -1,36 +1,39 @@
 import engine from 'engine.io'
+import winston from 'winston'
+import config from 'config'
 
-const socket = engine.listen(process.env.MIRROR_SOCKET_PORT || 3001)
+const socket = engine.listen(config.get('server.socket'))
+
+winston.info('Socket Server started on port %s', config.get('server.socket'))
 
 const peers = []
 
-const intercom = (socket) => (message = {}) => {
+const communicate = (socket) => (message = {}) => {
+  winston.debug(message)
   socket.send(JSON.stringify(message))
 }
 
-const sendAll = (message = {}) => {
+export const sendMessage = (message = {}) => {
   Object.keys(peers).forEach((key) => {
-    console.log('client [' + key + '] send message')
-    intercom(peers[key])(message)
+    winston.debug('client [' + key + '] send message')
+    communicate(peers[key])(message)
   })
 }
 
-export const sendMessage = (messages = []) => messages.forEach(sendAll)
-
-export const onStart = (messages = []) => {
+export const onStart = (aggregator) => {
   socket.on('connection', (client) => {
-    const channel = intercom(client)
-
-    console.log('client [' + client.id + '] connected')
+    winston.debug('client [' + client.id + '] connected')
 
     peers[client.id] = client
 
     client.on('close', () => {
       peers[client.id] = null
       delete peers[client.id]
-      console.log('client [' + client.id + '] left')
+      winston.debug('client [' + client.id + '] left')
     })
 
-    messages.forEach(channel)
+    aggregator().each(communicate(client))
   })
 }
+
+

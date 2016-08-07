@@ -19,9 +19,6 @@ module.exports = {
       test: /\.scss$/,
       loaders: ['style', 'css', 'autoprefixer-loader?browsers=last 2 versions', 'sass']
     }, {
-      test: /\.(woff|woff2|eot|ttf|svg)$/,
-      loader: 'url-loader?limit=100000'
-    }, {
       test: /\.html$/,
       loader: 'html'
     }, {
@@ -31,7 +28,13 @@ module.exports = {
       query: {
         presets: ['es2015', 'react']
       }
+    }, {
+      test: /.svg?$/,
+      loader: 'raw-loader'
     }]
+  },
+  sassLoader: {
+    includePaths: [path.resolve('node_modules'), path.resolve(__dirname, 'styles')]
   },
   devtool: 'eval'
 }

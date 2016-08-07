@@ -1,0 +1,43 @@
+// WEATHER COMPONENT
+
+@import 'variables';
+@import 'mixins';
+
+.weather-component {
+  @include center();
+
+  .weather-entry {
+    width: 33%;
+    padding: 0 $padding;
+    @include center();
+    flex-direction: column;
+  }
+
+  .weather-time {
+    font-size: $font-size * 2;
+    font-weight: 300;
+    margin-bottom: $margin;
+  }
+
+  .weather-icon {
+    display: block;
+    height: 95px;
+    margin-bottom: $margin;
+
+    svg {
+      fill: $primary;
+      width: 95px;
+      height: auto;
+    }
+  }
+
+  .weather-temperature {
+    font-size: $font-size * 2;
+    font-weight: 300;
+  }
+
+  .weather-percip {
+    font-size: $font-size * 1.5;
+    font-weight: 300;
+  }
+}
