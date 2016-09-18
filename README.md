@@ -1,4 +1,7 @@
+
 # Mirror Display
+[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 A webapp information screen to be used as a mirror display.
 
 ![Screenshot](https://raw.githubusercontent.com/alexander-heimbuch/mirror-display/master/footage/screenshot.png)
