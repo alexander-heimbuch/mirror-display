@@ -32,3 +32,5 @@ onDisconnect(() => {
     type: 'CONNECTION_CLOSE'
   })
 })
+
+store.subscribe(() => console.log(store.getState()))

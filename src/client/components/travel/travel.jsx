@@ -7,21 +7,14 @@ import './travel.scss';
 import icons from'./icons';
 
 const Travel = ({travel}) => (
-  <div className="travel-component">
-    { travel.length ? <h2 className="travel-headline">{config.travel.train.start} - {config.travel.train.destination}</h2> : null }
-      {travel.map(transport =>
-        <div className="travel-entry" key={transport.id}>
-          <div className="travel-icon" dangerouslySetInnerHTML={icons[transport.id]} />
-          <div className="travel-times">
-          {transport.times.map((time, index) =>
-            <div className="travel-time" key={index}>
-              <span className="travel-time-start">{time.start}</span>
-              <span className="travel-time-details">
-                { time.duration ? <span className="travel-time-duration">{time.duration}</span>: null }{time.traffic}
-              </span>
-            </div>
-          )}
-          </div>
+  <div className="travel-component component">
+    { travel.length ? <h2 className="travel-headline">{config.travel.start} - {config.travel.destination}</h2> : null }
+      {travel.map(departure =>
+        <div className="travel-departure" key={departure.id}>
+          <div className="travel-icon" dangerouslySetInnerHTML={icons.train} />
+          <div className="travel-start travel-details">{departure.start}</div>
+          <div className="travel-details">{departure.duration}</div>
+          <div className="travel-details">{departure.traffic}</div>
         </div>
       )}
   </div>
