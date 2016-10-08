@@ -24,7 +24,7 @@ export default () =>
 
       $('.result tbody.boxShadow').each((index, stop) => {
         if (index > 5) {
-          return;
+          return
         }
 
         results.push({
