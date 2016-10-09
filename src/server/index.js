@@ -56,7 +56,7 @@ schedule.scheduleJob('* * * * *', () =>
     .catch(errorHandler))
 
 // => update travel every 30 minutes
-schedule.scheduleJob('0,30 * * * *', () =>
+schedule.scheduleJob('*/15 * * * *', () =>
   travel()
     .then(setAction('TRAVEL_UPDATE'))
     .then(sendMessage)
