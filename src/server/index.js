@@ -59,7 +59,7 @@ schedule.scheduleJob('* * * * *', () =>
 schedule.scheduleJob('*/15 * * * *', () =>
   travel()
     .then(setAction('TRAVEL_UPDATE'))
-    .then(sendMessage)
+    .each(sendMessage)
     .catch(errorHandler))
 
 // => update quote once a day

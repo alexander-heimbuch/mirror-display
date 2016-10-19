@@ -15,12 +15,14 @@
     font-weight: 300;
 		@include center();
 		flex-direction: column;
+    margin-bottom: $margin;
 
 		.travel-summary {
 			display: flex;
 			align-items: center;
-			font-size: $font-size * 1.5;
+			font-size: $font-size * 1.7;
 			width: 65%;
+      margin-bottom: $margin / 2;
 		}
 
     .travel-icon {
@@ -38,9 +40,10 @@
 		.travel-routes {
 			display: flex;
 			align-items: center;
-			font-size: $font-size * 1.2;
+			font-size: $font-size * 1.5;
 			width: 65%;
 			padding-left: 60px;
+      margin-bottom: $margin / 2;
 		}
 
 		.product, .departure, .arrival {
