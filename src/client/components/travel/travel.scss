@@ -11,33 +11,69 @@
     margin-bottom: $margin;
   }
 
-  .travel-departure {
-    @include center();
-    font-size: $font-size * 1.5;
+  .travel-connection {
     font-weight: 300;
-    margin-bottom: $margin / 2;
+		@include center();
+		flex-direction: column;
 
-    .travel-details {
-      margin-right: $margin * 2;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    .travel-start {
-      width: 70px;
-    }
+		.travel-summary {
+			display: flex;
+			align-items: center;
+			font-size: $font-size * 1.5;
+			width: 65%;
+		}
 
     .travel-icon {
       height: 100%;
       margin-right: $margin;
       @include center();
-
+			width: 45px;
       svg {
         fill: $primary;
         width: 30px;
         height: auto;
       }
     }
+
+		.travel-routes {
+			display: flex;
+			align-items: center;
+			font-size: $font-size * 1.2;
+			width: 65%;
+			padding-left: 60px;
+		}
+
+		.product, .departure, .arrival {
+			display: inline-block;
+			white-space: nowrap;
+		}
+
+		.product {
+			width: 120px;
+		}
+
+		.departure, .arrival {
+			width: 65px;
+		}
+
+		.departure {
+			padding-right: 15px;
+		}
+
+		.arrival {
+			padding-left: 15px;
+		}
+
+		.overall-departure {
+			width: 120px;
+			display: inline-block;
+			position: relative;
+
+			&:after {
+				content: '⇾';
+				position: absolute;
+				right: 15px;
+			}
+		}
   }
 }

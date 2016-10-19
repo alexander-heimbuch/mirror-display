@@ -22,9 +22,9 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "3.4.1",
-    "cheerio": "0.22.0",
     "clientconfig": "1.1.1",
     "config": "1.21.0",
+		"cheerio": "0.22.0",
     "engine.io": "1.6.11",
     "engine.io-client": "1.6.11",
     "express": "4.14.0",
@@ -32,6 +32,7 @@
     "forever": "0.15.2",
     "lodash": "4.14.1",
     "moment": "2.14.1",
+    "node-horseman": "^3.1.1",
     "node-schedule": "1.1.1",
     "node-yaml-config": "0.0.4",
     "normalize.css": "4.2.0",
