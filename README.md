@@ -1,5 +1,7 @@
 
 # Mirror Display
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/alexander-heimbuch/mirror-display.svg)](https://greenkeeper.io/)
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 A webapp information screen to be used as a mirror display.
